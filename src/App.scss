@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Chakra+Petch:wght@300;400&family=Play&family=Rajdhani:wght@300;400&family=Saira+Condensed:wght@100;200&family=Source+Code+Pro:wght@200;300&display=swap");
+
+body,
+html {
+  height: 100%;
+  font-family: "Source Code Pro", sans-serif;
+  margin: 0px;
+  background-color: gainsboro;
+}
+
+// styles container for 'dOTC prototype' header and 'connect to a wallet' button
+.main-header {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  margin-top: 5em;
+  margin-bottom: 7.5em;
+}
+
+// 'Connect to a wallet' button
+.connect-wallet-btn {
+  width: 10em;
+  margin: auto;
+  font-size: larger;
+  margin-bottom: 1em;
+  font-family: "Source Code Pro", sans-serif;
+}
+
+// 'Create Offer' button
+.view-market-btn {
+  display: flex;
+  justify-content: center;
+  width: 10em;
+  margin: auto;
+  font-size: larger;
+  margin-bottom: 1em;
+  font-family: "Source Code Pro", sans-serif;
+}
+
+.link {
+  color: black;
+}
+
+.link:hover {
+  color: rgb(58, 58, 58);
+}
+
+// styling for container for table
+.market-view {
+  .market-table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    width: 56em;
+    font-size: larger;
+    background: darkgray;
+    border: outset 0.2em;
+    border-color: rgb(201, 201, 201);
+    padding: 1em;
+
+    .header-row,
+    .reg-row {
+      display: flex;
+      justify-content: space-around;
+      width: 56em;
+    }
+
+    // th = table header cell
+    // td = table data cell
+    th,
+    td {
+      width: 9em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    // 'Approve USDC' button
+    button {
+      width: 9rem;
+      margin: auto;
+      font-size: 0.9em;
+      margin-bottom: 1em;
+      height: 2rem;
+      font-family: "Source Code Pro", sans-serif;
+    }
+  }
+}
