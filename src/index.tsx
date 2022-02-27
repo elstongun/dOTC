@@ -10,7 +10,7 @@ import { ethers, BigNumber } from 'ethers';
 const config = {
   readOnlyChainId: Ropsten.chainId,
   readOnlyUrls: {
-    [Ropsten.chainId]: "https://ropsten.infura.io/v3/ba91a1810de34d2e8f8f9cb53c07d8fe",
+    [Ropsten.chainId]: "ChainId.Rinkeby", //https://ropsten.infura.io/v3/ba91a1810de34d2e8f8f9cb53c07d8fe",
   },
 }
 ReactDOM.render(

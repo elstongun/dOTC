@@ -277,15 +277,17 @@ function App() {
   return (
     <Layout>
       <main>
-        <div className="main-header">
-          <h1 className="header-text">dOTC prototype site</h1>
+        <div className="top-bar">
           <ConnectButton handleOpenModal={onOpen} />
           <AccountModal isOpen={isOpen} onClose={onClose} />
         </div>
+        <div className="main-header">
+          <h1 className="header-text">dOTC prototype site</h1>
+          </div>
         <div className="main-content">
           <div className="market-view">
-            <div className="market-table2">
-              <Center> Create an Offer</Center>
+            <div className="market-table create-offer-container">
+              <h1>Create an Offer</h1>
               <Table>
                 <Tr>
                   <Td>
@@ -294,36 +296,43 @@ function App() {
                   <Td>
                     <Button>Ξ{Number(User_WETH_Bal).toFixed(2)}</Button>
                   </Td>
-                  <Td></Td>
                   <Td>
                     <Button>Set WETH Price:</Button>
                   </Td>
                   <Td>
-                  {/* molly code --------------------- */}
-                  {/* molly code --------------------- */}
-                  {/* molly code --------------------- */}
-                  <form onSubmit={ handleSubmit }>
-                    <input 
-                      type="text" 
-                      name="mollyInput"
-                      id="mollyInput"
-                      value={ mollyInput }
-                      onChange={ handleChange }
-                      required/>
-                    <input type="submit" value="Submit"/>
-                  </form>
-                  {/* molly code end ----------------- */}
-                  {/* molly code end ----------------- */}
-                  {/* molly code end ----------------- */}
-                  {/* molly code end ----------------- */}
+                    {/* molly code --------------------- */}
+                    {/* molly code --------------------- */}
+                    {/* molly code --------------------- */}
+                    <form onSubmit={handleSubmit}>
+                      <input
+                        type="text"
+                        name="mollyInput"
+                        id="mollyInput"
+                        value={mollyInput}
+                        onChange={handleChange}
+                        required
+                      />
+                      {/* <input className="btn" type="submit" value="Submit" /> */}
+                    </form>
+                    {/* molly code end ----------------- */}
+                    {/* molly code end ----------------- */}
+                    {/* molly code end ----------------- */}
+                    {/* molly code end ----------------- */}
                   </Td>
                 </Tr>
                 <Tr>
-                  <Td></Td>
-                  <Td></Td>
-                  <Td></Td>
-                  <Td></Td>
-                  <Td></Td>
+                  <Td>
+                    <Button>x</Button>
+                  </Td>
+                  <Td>
+                    <Button>x</Button>
+                  </Td>
+                  <Td>
+                    <Button>x</Button>
+                  </Td>
+                  <Td>
+                    <Button type="submit" onClick={handleSubmit}>Submit</Button>
+                  </Td>
                 </Tr>
                 <Tr>
                   <Td>
@@ -332,12 +341,13 @@ function App() {
                   <Td>
                     <Button>${Number(User_USDC_Bal).toFixed(2)}</Button>
                   </Td>
-                  <Td></Td>
                   <Td>
                     <Button>Total Sale</Button>
                   </Td>
                   <Td>
-                    <Button>${(Number(mollyInput) * Number(User_WETH_Bal)).toFixed(2)}</Button>
+                    <Button>
+                      ${(Number(mollyInput) * Number(User_WETH_Bal)).toFixed(2)}
+                    </Button>
                   </Td>
                 </Tr>
                 <Tr>
@@ -346,8 +356,7 @@ function App() {
                   </Td>
                   <Td>
                     <Button>${ETH_Live_Price}</Button>
-                    </Td>
-                  <Td></Td>
+                  </Td>
                   <Td>
                     <Button>{orderAdd}</Button>
                   </Td>
@@ -358,41 +367,36 @@ function App() {
               </Table>
             </div>
 
-            <Center height='25px'> </Center>
+            <Center height="25px"> </Center>
 
-            <div className="market-table3">
-            <Center> Your Active Offers </Center>
+            <div className="market-table your-offers-container">
+              <h1> Your Active Offers </h1>
               <Table>
                 <Tr className="header-row">
-                <Th>Orders</Th>
-                <Th>Your Order Addresses</Th>
+                  <Th>Orders</Th>
+                  <Th>Your Order Addresses</Th>
                 </Tr>
-              {userActiveOffers?.map((item, index) => (
-                    <Tr className="reg-row" key={index}>
-                      {/* first cell for each reg table row */}
-                      <Td>
-                        {index}:
-                      </Td>
-                      <Td height="25px">
-                       
-                        {item &&
-                            `${item.slice(0, 6)}...${item.slice(
-                              item.length - 4,
-                              item.length
-                            )}`}
-                        
-                      </Td>
-                      
-                    </Tr>
-                  ))}
+                {userActiveOffers?.map((item, index) => (
+                  <Tr className="reg-row" key={index}>
+                    {/* first cell for each reg table row */}
+                    <Td>{index}:</Td>
+                    <Td height="25px">
+                      {item &&
+                        `${item.slice(0, 6)}...${item.slice(
+                          item.length - 4,
+                          item.length
+                        )}`}
+                    </Td>
+                  </Tr>
+                ))}
               </Table>
             </div>
-                    
-            <Center height='25px'> </Center>
 
-            <div className="market-table">
-            <Center> All Active Offers</Center>
-              <Table> 
+            <Center height="25px"> </Center>
+
+            <div className="market-table all-offers-container">
+              <h1> All Active Offers</h1>
+              <Table>
                 <Thead>
                   {/* table header row */}
                   <Tr className="header-row">
@@ -430,25 +434,18 @@ function App() {
                       </Td>
                       {/* third cell for each reg table row */}
                       <Td height="25px">
-                        {/* <Button type="button"> */}
-                        Ξ {formatEther(item[2])}
+                        {/* <Button type="button"> */}Ξ {formatEther(item[2])}
                         {/* </Button> */}
                       </Td>
                       {/* fourth cell for each reg table row */}
-                      < Td height='25px'>
-                         <button
-                         onClick={approval}
-                         > 
-                          Approve
-                          </button>
-                        </Td>
-                        < Td height='25px'>
-                         <button
-                         onClick={check_allowance_then_fill}
-                         > 
+                      <Td height="25px">
+                        <button onClick={approval}>Approve</button>
+                      </Td>
+                      <Td height="25px">
+                        <button onClick={check_allowance_then_fill}>
                           Fill
-                          </button>
-                        </Td>
+                        </button>
+                      </Td>
                     </Tr>
                   ))}
                 </Tbody>

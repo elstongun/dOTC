@@ -6,25 +6,26 @@ html {
   height: 100%;
   font-family: "Source Code Pro", sans-serif;
   margin: 0px;
+  font-size: 16px;
   background-color: gainsboro;
 }
 
-// styles container for 'dOTC prototype' header and 'connect to a wallet' button
+// styles container for 'dOTC prototype' header and 'connect to a wallet'/user address button
 .main-header {
   display: flex;
   flex-direction: column;
   margin: auto;
   text-align: center;
   justify-content: center;
-  margin-top: 5em;
-  margin-bottom: 7.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1rem;
 }
 
-// 'Connect to a wallet' button
+// 'connect to a wallet'/user address button
 .connect-wallet-btn {
   width: 10em;
   margin: auto;
-  font-size: larger;
   margin-bottom: 1em;
   font-family: "Source Code Pro", sans-serif;
 }
@@ -33,18 +34,17 @@ html {
 .view-market-btn {
   display: flex;
   justify-content: center;
-  width: 12em;
+  width: 1em;
   margin: auto;
-  font-size: larger;
   margin-bottom: 1em;
   font-family: "Source Code Pro", sans-serif;
 }
+
 .enter_order_input {
   display: flex;
   justify-content: center;
   width: 10em;
   margin: auto;
-  font-size: larger;
   margin-bottom: 1em;
   font-family: "Source Code Pro", sans-serif;
 }
@@ -56,10 +56,10 @@ html {
 .link:hover {
   color: rgb(58, 58, 58);
 }
+
 .order-btn {
   width: 5em;
   margin: auto;
-  font-size: medium;
   margin-bottom: 1em;
   font-family: "Source Code Pro", sans-serif;
 }
@@ -72,150 +72,129 @@ html {
     border-collapse: collapse;
     text-align: center;
     margin: auto;
-    width: 40em;
-    font-size: larger;
+    width: 95%;
     background: darkgray;
     border: outset 0.2em;
     border-color: rgb(201, 201, 201);
-    padding: 1em;
+    padding: .7em;
 
     .header-row,
     .reg-row {
       display: flex;
       justify-content: space-around;
-      width: 40em;
+      font-size: .8rem;
     }
   
+    table {
+      margin: auto;
+    }
     // th = table header cell
     // td = table data cell
     th,
     td {
-      width: 9em;
+      width: auto;
       margin-top: 0.5em;
       margin-bottom: 0.5em;
+      margin-left: 1em;
+      margin-right: 1em;
     }
 
     // 'Approve USDC' button
     button {
-      width: 9rem;
       margin: auto;
-      font-size: .8em;
       margin-bottom: 1em;
-      height: 2rem;
+      height: 2em;
       font-family: "Source Code Pro", sans-serif;
     }
+
     input {
-      width: 9rem;
+      width: 9.3em;
       margin: auto;
-      font-size: 0.9em;
       margin-bottom: 1em;
-      height: 1.6rem;
+      height: 1.6em;
       font-family: "Source Code Pro", sans-serif;
+    }
+
+    h1 {
+      font-size: 1rem;
+      margin-top: 0;
+      margin-bottom: .5em;
+    }
   }
 }
-  .market-table2 {
-    text-indent: 0;
-    border-color: inherit;
-    border-collapse: collapse;
-    text-align: center;
-    margin: auto;
-    width: 30em;
-    font-size: larger;
-    background: darkgray;
-    border: outset 0.2em;
-    border-color: rgb(201, 201, 201);
-    padding: 1em;
 
-    .header-row,
-    .reg-row {
-      display: flex;
-      justify-content: space-around;
-      width: 30em;
-    }
+.create-offer-container {
+  button {
+    width: 10em;
+  }
+}
 
-  // th = table header cell
-  // td = table data cell
-    th{
-      width: 9em;
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-      font-size: .9em;
-    }
-    td {
-      width: 5em;
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-      font-size: .9em;
-    }
+.your-offers-container {
+  button {
+    width: 10em;
+  }
+}
 
-    // 'Approve USDC' button
+.all-offers-container {
+  button {
+    width: 6.5em;
+  }
+
+  margin-bottom: 2em;
+}
+
+.btn {
+  width: 9em;
+  margin: auto;
+  margin-bottom: 1em;
+  height: 2em;
+  font-family: "Source Code Pro", sans-serif;
+}
+
+@media only screen and (max-width: 775px) {
+  body,html{
+    font-size: 14px;
+  }
+
+  .create-offer-container {
     button {
-      width: 7.5rem;
-      margin: auto;
-      margin-bottom: 1em;
-      height: 2rem;
-      font-size: .725em;
-      font-family: "Source Code Pro", sans-serif;
+      width: 10em;
+      font-size: .7rem;
     }
+  }
+
+  .market-view {
+  .market-table {
+    width: 85%;
     input {
-      width: 7rem;
-      margin: auto;
-      margin-bottom: 1em;
-      height: 1.6rem;
+      width: 6.65em;
+      height: 1em;
       font-family: "Source Code Pro", sans-serif;
     }
   }
-  .market-table3 {
-    text-indent: 0;
-    border-color: inherit;
-    border-collapse: collapse;
-    text-align: center;
-    margin: auto;
-    width: 30em;
-    height: 13em;
-    font-size: medium;
-    background: darkgray;
-    border: outset 0.2em;
-    border-color: rgb(201, 201, 201);
-    padding: 1em;
+}
+}
 
-    .header-row,
-    .reg-row {
-      display: flex;
-      justify-content: space-around;
-      width: 30em;
-    }
+@media only screen and (max-width: 485px) {
+  body,html{
+    font-size: 14px;
+  }
 
-  // th = table header cell
-  // td = table data cell
-    th{
-      width: 9em;
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-      font-size: .9em;
-    }
-    td {
-      width: 5em;
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-      font-size: .9em;
-    }
-
-    // 'Approve USDC' button
+  .create-offer-container {
     button {
-      width: 7.5rem;
-      margin: auto;
-      margin-bottom: 1em;
-      height: 2rem;
-      font-size: .725em;
-      font-family: "Source Code Pro", sans-serif;
+      width: 10em;
+      font-size: .6rem;
     }
+  }
+
+  .market-view {
+  .market-table {
+    width: 85%;
     input {
-      width: 7rem;
-      margin: auto;
-      margin-bottom: 1em;
-      height: 1.6rem;
+      width: 5.65em;
+      height: 1em;
       font-family: "Source Code Pro", sans-serif;
     }
   }
+}
 }
